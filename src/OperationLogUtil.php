@@ -4,6 +4,8 @@ namespace BusinessLogger;
 
 use app\model\Operation;
 use app\model\OperationAttribute;
+use BusinessLogger\Driver\IDriver;
+use BusinessLogger\Driver\ThinkPHP\ThinkPHP;
 use BusinessLogger\Handler\NormalTypeHandler;
 use Carbon\Carbon;
 use ReflectionClass;
@@ -24,11 +26,16 @@ abstract class OperationLogUtil
      * @var array|mixed
      */
     private $map;
+    /**
+     * @var IDriver
+     */
+    private $driver;
 
     public function __construct(array $config = [])
     {
         $this->appName = $config['app_name'] ?? '未命名';
         $this->map     = $config['map'] ?? [];
+        $this->driver  = (new ReflectionClass($config['driver'] ?? ThinkPHP::class))->newInstance();
     }
 
     /**
@@ -41,10 +48,8 @@ abstract class OperationLogUtil
         $operationModel['operation_time'] = Carbon::now()->format('Y-m-d H:i:s');
         $operationModel['app_name']       = $this->getAppName();
 
-        $this->save($operationModel,$attributes);
+        $this->driver->save($operationModel,$attributes);
     }
-
-    abstract protected function save(array $operation,array $attributes);
 
     /**
      * 直接记录属性
@@ -163,29 +168,6 @@ abstract class OperationLogUtil
      */
     public function query(array $params)
     {
-        $operations   = Operation::where('app_name', $this->getAppName())->order('id desc')->paginate();
-        $operationIds = collect($operations->items())->column('id');
-        $attributes   = OperationAttribute::whereIn('operation_id', $operationIds)->select()->toArray();
-
-        $operationMap = [];
-        foreach ($attributes as $attribute) {
-            $operationMap[$attribute['operation_id']][] = $attribute;
-        }
-
-        $results = [];
-        foreach ($operations->items() as $item) {
-            $item['attributes'] = [];
-            if (isset($operationMap[$item['id']])) {
-                $item['attributes'] = $operationMap[$item['id']];
-            }
-            $results[] = $item;
-        }
-
-        return [
-            'data' => $results,
-            'meta' => [
-                'total' => $operations->total()
-            ]
-        ];
+        return $this->driver->query($params);
     }
 }
