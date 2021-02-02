@@ -1,0 +1,12 @@
+{
+  "name": "ccb1900/business-logger",
+  "require": {
+    "php": ">=7.1.0",
+    "nesbot/carbon": "^2.43"
+  },
+  "autoload": {
+    "psr-4": {
+      "BusinessLogger\\": "./src"
+    }
+  }
+}
