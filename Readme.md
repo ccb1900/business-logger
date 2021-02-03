@@ -64,3 +64,266 @@ return [
 默认会使用 NormalTypeHandler 记录
 
 可以实现`BaseExtendedTypeHandler`接口，自定义处理方式
+
+## 查询结果
+```json
+{
+    "data": [
+        {
+            "id": 8,
+            "app_name": "未命名",
+            "object_name": "ProcessDef",
+            "object_id": "1",
+            "operator": "李总",
+            "operation_name": "增加",
+            "operation_alias": "增加一个流程",
+            "extra_words": "开始增加流程",
+            "comment": "加油去添加流程",
+            "operation_time": "2021-02-02 18:14:44",
+            "attributes": [
+                {
+                    "id": 12,
+                    "operation_id": 8,
+                    "attribute_type": "normal",
+                    "attribute_name": "status",
+                    "attribute_alias": "Status",
+                    "old_value": "TODO",
+                    "new_value": "Doing",
+                    "diff_value": ""
+                },
+                {
+                    "id": 13,
+                    "operation_id": 8,
+                    "attribute_type": "normal",
+                    "attribute_name": "status",
+                    "attribute_alias": "Status",
+                    "old_value": "TODO",
+                    "new_value": "Doing",
+                    "diff_value": ""
+                },
+                {
+                    "id": 14,
+                    "operation_id": 8,
+                    "attribute_type": "normal",
+                    "attribute_name": "status",
+                    "attribute_alias": "Status",
+                    "old_value": "TODO",
+                    "new_value": "Doing",
+                    "diff_value": ""
+                }
+            ]
+        },
+        {
+            "id": 7,
+            "app_name": "未命名",
+            "object_name": "app\\model\\ProcessDef",
+            "object_id": "1",
+            "operator": "周总",
+            "operation_name": "增加",
+            "operation_alias": "增加了流程图",
+            "extra_words": "增加了流程图2",
+            "comment": "流程图名称是：采购",
+            "operation_time": "2021-02-02 18:14:44",
+            "attributes": [
+                {
+                    "id": 11,
+                    "operation_id": 7,
+                    "attribute_type": "normal",
+                    "attribute_name": "name",
+                    "attribute_alias": "name",
+                    "old_value": "采购",
+                    "new_value": "1612260884",
+                    "diff_value": ""
+                }
+            ]
+        },
+        {
+            "id": 6,
+            "app_name": "未命名",
+            "object_name": "ProcessDef",
+            "object_id": "1",
+            "operator": "李总",
+            "operation_name": "增加",
+            "operation_alias": "增加一个流程",
+            "extra_words": "开始增加流程",
+            "comment": "加油去添加流程",
+            "operation_time": "2021-02-02 16:54:03",
+            "attributes": [
+                {
+                    "id": 8,
+                    "operation_id": 6,
+                    "attribute_type": "normal",
+                    "attribute_name": "status",
+                    "attribute_alias": "Status",
+                    "old_value": "TODO",
+                    "new_value": "Doing",
+                    "diff_value": ""
+                },
+                {
+                    "id": 9,
+                    "operation_id": 6,
+                    "attribute_type": "normal",
+                    "attribute_name": "status",
+                    "attribute_alias": "Status",
+                    "old_value": "TODO",
+                    "new_value": "Doing",
+                    "diff_value": ""
+                },
+                {
+                    "id": 10,
+                    "operation_id": 6,
+                    "attribute_type": "normal",
+                    "attribute_name": "status",
+                    "attribute_alias": "Status",
+                    "old_value": "TODO",
+                    "new_value": "Doing",
+                    "diff_value": ""
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "app_name": "未命名",
+            "object_name": "app\\model\\ProcessDef",
+            "object_id": "1",
+            "operator": "周总",
+            "operation_name": "增加",
+            "operation_alias": "增加了流程图",
+            "extra_words": "增加了流程图2",
+            "comment": "流程图名称是：采购",
+            "operation_time": "2021-02-02 16:54:03",
+            "attributes": [
+                {
+                    "id": 7,
+                    "operation_id": 5,
+                    "attribute_type": "normal",
+                    "attribute_name": "name",
+                    "attribute_alias": "name",
+                    "old_value": "采购",
+                    "new_value": "1612256043",
+                    "diff_value": ""
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "app_name": "未命名",
+            "object_name": "ProcessDef",
+            "object_id": "1",
+            "operator": "李总",
+            "operation_name": "增加",
+            "operation_alias": "增加一个流程",
+            "extra_words": "开始增加流程",
+            "comment": "加油去添加流程",
+            "operation_time": "2021-02-02 16:48:12",
+            "attributes": [
+                {
+                    "id": 4,
+                    "operation_id": 4,
+                    "attribute_type": "normal",
+                    "attribute_name": "status",
+                    "attribute_alias": "Status",
+                    "old_value": "TODO",
+                    "new_value": "Doing",
+                    "diff_value": ""
+                },
+                {
+                    "id": 5,
+                    "operation_id": 4,
+                    "attribute_type": "normal",
+                    "attribute_name": "status",
+                    "attribute_alias": "Status",
+                    "old_value": "TODO",
+                    "new_value": "Doing",
+                    "diff_value": ""
+                },
+                {
+                    "id": 6,
+                    "operation_id": 4,
+                    "attribute_type": "normal",
+                    "attribute_name": "status",
+                    "attribute_alias": "Status",
+                    "old_value": "TODO",
+                    "new_value": "Doing",
+                    "diff_value": ""
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "app_name": "未命名",
+            "object_name": "app\\model\\ProcessDef",
+            "object_id": "1",
+            "operator": "周总",
+            "operation_name": "增加",
+            "operation_alias": "增加了流程图",
+            "extra_words": "增加了流程图2",
+            "comment": "流程图名称是：采购",
+            "operation_time": "2021-02-02 16:48:12",
+            "attributes": [
+                {
+                    "id": 3,
+                    "operation_id": 3,
+                    "attribute_type": "normal",
+                    "attribute_name": "name",
+                    "attribute_alias": "name",
+                    "old_value": "采购",
+                    "new_value": "1612255691",
+                    "diff_value": ""
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "app_name": "未命名",
+            "object_name": "ProcessDef",
+            "object_id": "1",
+            "operator": "李总",
+            "operation_name": "增加",
+            "operation_alias": "增加一个流程",
+            "extra_words": "开始增加流程",
+            "comment": "加油去添加流程",
+            "operation_time": "2021-02-02 16:28:46",
+            "attributes": [
+                {
+                    "id": 2,
+                    "operation_id": 2,
+                    "attribute_type": "normal",
+                    "attribute_name": "status",
+                    "attribute_alias": "Status",
+                    "old_value": "TODO",
+                    "new_value": "Doing",
+                    "diff_value": ""
+                }
+            ]
+        },
+        {
+            "id": 1,
+            "app_name": "未命名",
+            "object_name": "app\\model\\ProcessDef",
+            "object_id": "1",
+            "operator": "周总",
+            "operation_name": "增加",
+            "operation_alias": "增加了流程图",
+            "extra_words": "增加了流程图2",
+            "comment": "流程图名称是：采购",
+            "operation_time": "2021-02-02 16:28:46",
+            "attributes": [
+                {
+                    "id": 1,
+                    "operation_id": 1,
+                    "attribute_type": "normal",
+                    "attribute_name": "name",
+                    "attribute_alias": "name",
+                    "old_value": "采购",
+                    "new_value": "1612254526",
+                    "diff_value": ""
+                }
+            ]
+        }
+    ],
+    "meta": {
+        "total": 8
+    }
+}
+```
