@@ -5,6 +5,7 @@
  */
 return [
     'app_name' => '日志记录仪',
+    'driver' => \BusinessLogger\Driver\ThinkPHP\ThinkPHP::class,
     'map' => [
         'sddjdsdh' => [
             'name' => [

@@ -17,5 +17,5 @@ interface IDriver
      * @param  array  $params
      * @return mixed
      */
-    public function query(array $params);
+    public function query($appName, array $params);
 }

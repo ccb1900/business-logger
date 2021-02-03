@@ -17,9 +17,9 @@ class ThinkPHP implements IDriver
         OperationAttribute::insertAll($attributes);
     }
 
-    public function query(array $params)
+    public function query($appName,array $params)
     {
-        $operations   = Operation::where('app_name', $this->getAppName())->order('id desc')->paginate();
+        $operations   = Operation::where('app_name', $appName)->order('id desc')->paginate();
         $operationIds = collect($operations->items())->column('id');
         $attributes   = OperationAttribute::whereIn('operation_id', $operationIds)->select()->toArray();
 

@@ -2,8 +2,6 @@
 
 namespace BusinessLogger;
 
-use app\model\Operation;
-use app\model\OperationAttribute;
 use BusinessLogger\Driver\IDriver;
 use BusinessLogger\Driver\ThinkPHP\ThinkPHP;
 use BusinessLogger\Handler\NormalTypeHandler;
@@ -144,11 +142,6 @@ abstract class OperationLogUtil
         }
     }
 
-    public function copy($old)
-    {
-        return clone $old;
-    }
-
     /**
      * 获取应用名称
      * @return mixed
@@ -162,12 +155,9 @@ abstract class OperationLogUtil
      * 查询日志内容
      * @param  array  $params
      * @return array
-     * @throws DataNotFoundException
-     * @throws DbException
-     * @throws ModelNotFoundException
      */
     public function query(array $params)
     {
-        return $this->driver->query($params);
+        return $this->driver->query($this->getAppName(),$params);
     }
 }
