@@ -327,3 +327,21 @@ return [
     }
 }
 ```
+
+## composer 使用
+
+包未发布到 composer，因此需要指定分支和版本dev-main(分支)#0.1.1(版本)
+
+```json
+{
+  "require": {
+    "ccb1900/business-logger": "dev-main#0.1.1"
+  },
+  "repositories": {
+    "businiess-logger": {
+      "type": "vcs",
+      "url": "https://github.com/ccb1900/business-logger.git"
+    }
+  }
+}
+```
