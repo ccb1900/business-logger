@@ -11,10 +11,12 @@ class ThinkPHP implements IDriver
     {
         $operation = Operation::create($operation);
 
-        foreach ($attributes as &$item) {
-            $item['operation_id'] = $operation->id;
+        if (count($attributes) > 0) {
+            foreach ($attributes as &$item) {
+                $item['operation_id'] = $operation->id;
+            }
+            OperationAttribute::insertAll($attributes);
         }
-        OperationAttribute::insertAll($attributes);
     }
 
     public function query($appName,array $params)

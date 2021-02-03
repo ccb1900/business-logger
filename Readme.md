@@ -29,15 +29,6 @@ class OperationLoggerService extends OperationLogUtil
         ];
         parent::__construct([]);
     }
-    protected function save(array $operation, array $attributes)
-    {
-        $operation = Operation::create($operation);
-
-        foreach ($attributes as &$item) {
-            $item['operation_id'] = $operation->id;
-        }
-        OperationAttribute::insertAll($attributes);
-    }
 }
 ```
 上面的写法是为了兼容不同的框架
@@ -45,9 +36,12 @@ class OperationLoggerService extends OperationLogUtil
 ## 配置文件结构
 ```php
 return [
+    // 应用名称
     'app_name' => '日志记录仪',
+    // 持久化驱动
+    'driver' => \BusinessLogger\Driver\ThinkPHP\ThinkPHP::class,
     'map' => [
-        'sddjdsdh' => [
+        '模型类名称' => [
             'name' => [
                 'alias' => '流程名称',
                 'type' => \BusinessLogger\Handler\NormalTypeHandler::class,
@@ -66,5 +60,7 @@ return [
 ```
 
 ## 特殊类型处理接口
+
+默认会使用 NormalTypeHandler 记录
 
 可以实现`BaseExtendedTypeHandler`接口，自定义处理方式
