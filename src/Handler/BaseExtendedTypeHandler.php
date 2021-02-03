@@ -14,5 +14,5 @@ interface BaseExtendedTypeHandler
     /**
      * @return String
      */
-    public function getName():String;
+    public static function getName():String;
 }

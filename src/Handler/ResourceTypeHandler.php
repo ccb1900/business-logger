@@ -19,7 +19,7 @@ class ResourceTypeHandler implements BaseExtendedTypeHandler
         ];
     }
 
-    public function getName(): string
+    public static function getName(): string
     {
         return 'resource';
     }

@@ -21,7 +21,7 @@ class RichTextTypeHandler implements BaseExtendedTypeHandler
         ];
     }
 
-    public function getName():String
+    public static function getName():String
     {
         return 'rich_text';
     }

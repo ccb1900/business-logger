@@ -21,7 +21,7 @@ class NormalTypeHandler implements BaseExtendedTypeHandler
         ];
     }
 
-    public function getName():String
+    public static function getName():String
     {
         return 'normal';
     }
