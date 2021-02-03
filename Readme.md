@@ -9,6 +9,8 @@ class OperationLoggerService extends OperationLogUtil
         // 此处配置可以按照自己的情况获取
         $config = [
             'app_name' => '日志记录仪',
+            // 默认驱动就是tp
+            'driver' => \BusinessLogger\Driver\ThinkPHP\ThinkPHP::class,
             'map' => [
                 '模型名称' => [
                     // 数据库字段处理方式
@@ -27,11 +29,12 @@ class OperationLoggerService extends OperationLogUtil
                 ]
             ],
         ];
-        parent::__construct([]);
+        parent::__construct($config);
     }
 }
 ```
-上面的写法是为了兼容不同的框架
+
+可兼容不同框架
 
 ## 配置文件结构
 ```php
